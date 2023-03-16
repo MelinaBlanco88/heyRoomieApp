@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "heyroomie-app",
-    "slug": "heyroomie-app",
+    "name": "curso-react-native",
+    "slug": "curso-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
