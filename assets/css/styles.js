@@ -63,7 +63,6 @@ export const styles = StyleSheet.create({
       maxWidth: 200,
       marginLeft: 'auto',
       marginRight: 'auto',
-      display: 'block',
       justifyContent: 'center'
     },
 
