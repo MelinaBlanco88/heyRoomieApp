@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
-import Navigator from './src/navigators/Navigator';
+import MainNavigator from './src/navigators/MainNavigator';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -22,7 +22,7 @@ export default function App() {
   }
 
   return (
-    <Navigator />
+    <MainNavigator />
   );
 };
 
