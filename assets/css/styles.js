@@ -11,10 +11,28 @@ export const styles = StyleSheet.create({
 		fontFamily: "open-sans-bold",
 	},
 
+	button: {
+		backgroundColor: Colors.primary,
+		paddingLeft: 20,
+		paddingRight: 20,
+		height: 50,
+		borderRadius: 5,
+		marginTop: 10,
+		alignItems: "center",
+		maxWidth: 200,
+		marginLeft: "auto",
+		marginRight: "auto",
+		justifyContent: "center",
+	},
+
+	buttonSecondary: {
+		backgroundColor: Colors.secondary,
+	},
+
 	header: {
 		height: 90,
 		paddingTop: 36,
-		backgroundColor: Colors.accent,
+		backgroundColor: Colors.primary,
 		alignItems: "center",
 		justifyContent: "center",
 	},
@@ -22,7 +40,7 @@ export const styles = StyleSheet.create({
 	textHeader: {
 		color: Colors.white,
 		fontFamily: "open-sans",
-		fontSize: 24,
+		fontSize: 16,
 	},
 
 	screen: {
@@ -36,112 +54,23 @@ export const styles = StyleSheet.create({
 		marginTop: 20,
 	},
 
-	inputContainer: {
-		flexDirection: "row",
-		marginTop: 30,
-		marginBottom: 20,
-		justifyContent: "space-between",
-		alignItems: "center",
+	tabBar: {
+		position: 'absolute',
+		bottom: 0,
+		left: 0,
+		right: 0,
+		borderRadius: 15,
+		height: 80
+	},
+	
+	tabBarIcon: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 
-	input: {
-		borderBottomColor: Colors.black,
-		minWidth: 200,
-		maxWidth: 300,
-		borderBottomWidth: 1,
-		height: 50,
-	},
-
-	button: {
-		backgroundColor: Colors.primary,
-		paddingLeft: 20,
-		paddingRight: 20,
-		height: 50,
-		borderRadius: 5,
-		marginTop: 10,
-		alignItems: "center",
-		maxWidth: 200,
-		marginLeft: "auto",
-		marginRight: "auto",
-		// display: "block",
-		justifyContent: "center",
-	},
-
-	buttonDelete: {
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: Colors.alert,
-		color: Colors.white,
-		borderRadius: "50%",
-		width: 30,
-		height: 30,
-	},
-
-	warning: {
-		backgroundColor: Colors.alert,
-		color: Colors.white,
-		fontFamily: "open-sans",
-	},
-
-	contentList: {
+	boxRooms: {
 		marginTop: 20,
-		padding: 10,
-		margin: 0,
-	},
-
-	itemContainer: {
-		display: "flex",
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between",
-		gap: 30,
-		marginTop: 5,
-		marginBottom: 5,
-		padding: 8,
-		borderRadius: 5,
-		borderWidth: 2,
-		borderColor: Colors.accent,
-		borderStyle: "solid",
-	},
-
-	item: {
-		fontFamily: "open-sans-bold",
-		padding: 10,
-		textAlign: "center",
-	},
-
-	modalContainer: {
-		height: "100%",
-		width: "100%",
-		marginTop: 100,
-		alignSelf: "center",
-		backgroundColor: "#fffaeb",
-		padding: 50,
-	},
-
-	marginBottom: {
-		marginBottom: 50,
-	},
-
-	modalActions: {
-		display: "flex",
-		flexDirection: "row",
-		marginTop: 50,
-	},
-
-	itemCompleted: {
-		backgroundColor: Colors.primary,
-		borderRadius: 5,
-		padding: 8,
-	},
-
-	itemIncomplete: {
-		padding: 8,
-	},
-
-	instructions: {
-		fontSize: 18,
-		textAlign: "center",
+		marginBottom: 20,
 	},
 });

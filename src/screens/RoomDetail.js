@@ -4,8 +4,6 @@ import { ROOMS } from '../data/rooms'
 
 const RoomDetailScreen = ({ route, navigation}) => {
 
-    
-
   const { room } = route.params
 
   useEffect(() => {

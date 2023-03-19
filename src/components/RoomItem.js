@@ -1,5 +1,6 @@
 import React from "react";
 import { AspectRatio, Stack, Image, Center, Heading, HStack, Box, Text } from "native-base";
+import { styles } from '../../assets/css/styles.js';
 
 export const RoomItem = ({
 	id,
@@ -8,10 +9,10 @@ export const RoomItem = ({
 	country,
 	city,
 	price,
-	imgSrc = "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg",
+	imgSrc 
 }) => {
 	return (
-		<Box
+		<Box style={styles.boxRooms}
 			maxW='80'
 			rounded='lg'
 			overflow='hidden'
@@ -50,10 +51,12 @@ export const RoomItem = ({
 					}}
 					position='absolute'
 					bottom='0'
-					px='3'
+					px='6'
 					py='1.5'
+					display='flex'
+					flexDirection='row'
 				>
-					PHOTOS
+					$ {price}
 				</Center>
 			</Box>
 			<Stack p='4' space={3}>
@@ -73,11 +76,11 @@ export const RoomItem = ({
 						ml='-0.5'
 						mt='-1'
 					>
-						{description}
+						{country}, {city}
 					</Text>
 				</Stack>
 				<Text fontWeight='400'>
-					Bengaluru (also called Bangalore) is the center of India's high-tech industry. The city is also known for its parks and nightlife.
+				{description}
 				</Text>
 				<HStack alignItems='center' space={4} justifyContent='space-between'>
 					<HStack alignItems='center'>
@@ -88,7 +91,7 @@ export const RoomItem = ({
 							}}
 							fontWeight='400'
 						>
-							6 mins ago
+							{price}
 						</Text>
 					</HStack>
 				</HStack>

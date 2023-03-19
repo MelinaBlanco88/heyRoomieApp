@@ -3,7 +3,7 @@ import {View, StyleSheet, Text} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-
+import { styles } from '../../assets/css/styles.js';
 
 import Home from '../screens/Home';
 import RoomsList from '../screens/RoomsList';
@@ -44,29 +44,5 @@ const TabNavigator = () => {
         </BottomTabs.Navigator>
     );
 }
-
-const styles = StyleSheet.create({
-    tabBar: {
-      shadowColor: '#7F5DF0',
-      shadowOffset: {
-        width: 0,
-        height: 10
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 0.25,
-      elevation: 5,
-      position: 'absolute',
-      bottom: 25,
-      left: 20,
-      right: 20,
-      borderRadius: 15,
-      height: 90
-    },
-    tabBarIcon: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }
-  })
 
 export default TabNavigator;
