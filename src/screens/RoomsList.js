@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native';
 import { Box, NativeBaseProvider, ScrollView } from "native-base";
 import { ROOMS } from "../data/rooms";
 import { RoomItem } from "../components/RoomItem";
-import { styles } from '../../assets/css/styles.js';
 
 const RoomsList = ({ route, navigation }) => {
 
