@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Pressable, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from '../../assets/css/styles';
 import Header from '../../src/components/Header.js';
 import { NativeBaseProvider, Center } from "native-base";
@@ -12,20 +12,16 @@ const Home = ( { navigation } ) => {
             <Center>
                 <Image 
                     source={require('./img/logo.png')} 
-                    style={{
-                        width: 200,
-                        marginTop: 30,
-                        resizeMode: 'contain',
-                    }}
+                    style={{ width: 200, marginTop: 30, resizeMode: 'contain' }}
                 />
             </Center>
 
             <View style={styles.screen}>
-                <Pressable onPress={() => { 
+                <TouchableOpacity activeOpacity={0.75} onPress={() => { 
                     navigation.navigate('RoomsList') 
                 }} style={styles.button}>
                     <Text style={styles.colorWhite}>Login</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </NativeBaseProvider>
     );

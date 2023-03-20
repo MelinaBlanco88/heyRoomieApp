@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 
-const RoomDetailScreen = ({ route, navigation}) => {
+const RoomDetail = ({ route, navigation}) => {
 
-  const { room } = route.params
+  const { room } = route.params;
 
   useEffect(() => {
     navigation.setOptions({
@@ -17,4 +17,4 @@ const RoomDetailScreen = ({ route, navigation}) => {
   )
 }
 
-export default RoomDetailScreen
+export default RoomDetail

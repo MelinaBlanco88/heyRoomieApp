@@ -6,19 +6,14 @@ import { RoomItem } from "../components/RoomItem";
 
 const RoomsList = ({ route, navigation }) => {
 
-	let roomID = ROOMS.id
+	const onSelectRoom = (room) => {
+        navigation.navigate('RoomDetail', {
+            id: ROOMS.id,
+            name: ROOMS.name,
+        })
+    }
 
-	roomID = route.params
-
-  	const rooms = ROOMS.filter(room => room.id === roomID)
-
-	const handleOnSelected = (item) => {
-		navigation.navigate('Detail', {
-			room: item
-		})
-	}
-
-	const renderRoomItem = ({ item }) => (<RoomItem item={item} onSelected={handleOnSelected} />)
+    const renderRoomItem = ({ room }) => <RoomItem item={room} onSelect={onSelectRoom} />
 
 	return (
 		<NativeBaseProvider>
@@ -27,7 +22,7 @@ const RoomsList = ({ route, navigation }) => {
 					<Box alignItems='center'>
 						{ROOMS.map((room) => {
 							return <RoomItem 
-								key={room.id} 
+								keyExtractor={(room) => room.id}
 								name={room.name} 
 								country={room.country} 
 								city={room.city} 

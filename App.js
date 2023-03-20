@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native'
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
-import MainNavigator from './src/navigators/MainNavigator';
+import TabNavigator from './src/navigators/TabNavigator';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -22,7 +23,9 @@ export default function App() {
   }
 
   return (
-    <MainNavigator />
+    <NavigationContainer>
+      <TabNavigator />
+    </NavigationContainer>
   );
 };
 
