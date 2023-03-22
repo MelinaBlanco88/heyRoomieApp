@@ -6,8 +6,9 @@ import { RoomItem } from "../components/RoomItem";
 import { selectedRoom } from "../store/actions/room.action";
 
 const RoomsList = ({ navigation }) => {
+	const rooms = useSelector((state) => state.rooms);
+
 	const dispatch = useDispatch();
-	const item =  useSelector(state => state.room.room);
 
 	const onSelectRoom = (room) => {
 		dispatch(selectedRoom(room.id))
@@ -17,19 +18,22 @@ const RoomsList = ({ navigation }) => {
         })
     }
 
-    const renderRoomItem = ({ room }) => <RoomItem item={room} onSelect={onSelectRoom} />
+    const renderRoomItem = ({ room }) => <RoomItem item={room} onSelected={onSelectRoom} />
 
 	return (
 		<NativeBaseProvider>
 			<SafeAreaView>
 				<ScrollView>
-					<Box alignItems='center'>
-						{ROOMS.map((room) => {
-							return <RoomItem 
-								data={room} 
-								keyExtractor={(room) => room.id}
-								renderItem={renderRoomItem}
-							/>;
+				<Box alignItems='center'>
+						{rooms.map((room) => {
+							return (
+								<RoomItem
+									keyExtractor={(room) => room.id}
+									renderItem={renderRoomItem}
+									key={room.id}
+									{...room}
+								/>
+							);
 						})}
 					</Box>
 				</ScrollView>

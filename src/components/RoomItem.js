@@ -1,22 +1,16 @@
 import React from "react";
 import { AspectRatio, Stack, Image, Center, Heading, HStack, Box, Text } from "native-base";
-import { styles } from '../../assets/css/styles.js';
-import { TouchableOpacity } from 'react-native';
+import { styles } from "../../assets/css/styles.js";
+import { TouchableOpacity } from "react-native";
 
-export const RoomItem = ({
-	id,
-	name,
-	description,
-	country,
-	city,
-	price,
-	imgSrc, 
-	room, 
-	onSelected
-}) => {
+export const RoomItem = ({ id, name, description, country, city, price, imgSrc, room, onSelected }) => {
 	return (
-		<TouchableOpacity onPress={() => onSelected(room)}>
-			<Box style={styles.boxRooms}
+		<TouchableOpacity
+		// No funciona:
+		onPress={() => onSelected(room)}
+		>
+			<Box
+				style={styles.boxRooms}
 				maxW='80'
 				rounded='lg'
 				overflow='hidden'
@@ -83,9 +77,7 @@ export const RoomItem = ({
 							{country}, {city}
 						</Text>
 					</Stack>
-					<Text fontWeight='400'>
-					{description}
-					</Text>
+					<Text fontWeight='400'>{description}</Text>
 					<HStack alignItems='center' space={4} justifyContent='space-between'>
 						<HStack alignItems='center'>
 							<Text
