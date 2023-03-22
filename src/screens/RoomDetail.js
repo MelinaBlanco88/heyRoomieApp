@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import { ROOMS } from "../data/rooms";
 
 const RoomDetail = ({ route, navigation}) => {
 
-  const { room } = route.params;
+  const room = rooms.filter((room) => room.Id === route.params.Id);
 
   useEffect(() => {
     navigation.setOptions({
