@@ -6,6 +6,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { styles } from "../../assets/css/styles.js";
 import Home from "../screens/Home";
 import RoomsList from "../screens/RoomsList";
+import RoomsNavigator from "./RoomsNavigator.js";
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -26,8 +27,8 @@ const TabNavigator = () => {
 			/>
 
 			<BottomTabs.Screen
-				name='RoomsList'
-				component={RoomsList}
+				name='Rooms navigation'
+				component={RoomsNavigator}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<View style={styles.tabBarIcon}>

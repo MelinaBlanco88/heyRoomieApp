@@ -1,21 +1,22 @@
-import React, { useEffect } from 'react';
-import { ROOMS } from "../data/rooms";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { View, Text } from "react-native";
 
-const RoomDetail = ({ route, navigation}) => {
+const RoomDetail = ({ route, navigation }) => {
+	// Del estado, pedimos solo "selected" pero le cambiamos el nombre a room para mejor legibilidad
+	const { selected: room } = useSelector((state) => state);
 
-  const room = rooms.filter((room) => room.Id === route.params.Id);
+	useEffect(() => {
+		navigation.setOptions({
+			title: room.name,
+		});
+	}, []);
 
-  useEffect(() => {
-    navigation.setOptions({
-      title: room.name
-    })
-  },[])
+	return (
+		<View>
+			<Text>{room.name}</Text>
+		</View>
+	);
+};
 
-  return (
-    <View>
-      <Text>{room.name}</Text>
-    </View>
-  )
-}
-
-export default RoomDetail
+export default RoomDetail;

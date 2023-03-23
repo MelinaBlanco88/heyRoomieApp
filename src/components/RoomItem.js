@@ -3,11 +3,11 @@ import { AspectRatio, Stack, Image, Center, Heading, HStack, Box, Text } from "n
 import { styles } from "../../assets/css/styles.js";
 import { TouchableOpacity } from "react-native";
 
-export const RoomItem = ({ id, name, description, country, city, price, imgSrc, room, onSelected }) => {
+export const RoomItem = ({ room, onSelected }) => {
 	return (
 		<TouchableOpacity
-		// No funciona:
-		onPress={() => onSelected(room)}
+			// No funciona:
+			onPress={() => onSelected(room)}
 		>
 			<Box
 				style={styles.boxRooms}
@@ -32,7 +32,7 @@ export const RoomItem = ({ id, name, description, country, city, price, imgSrc, 
 					<AspectRatio w='100%' ratio={16 / 9}>
 						<Image
 							source={{
-								uri: imgSrc,
+								uri: room.imgSrc,
 							}}
 							alt='image'
 						/>
@@ -54,13 +54,13 @@ export const RoomItem = ({ id, name, description, country, city, price, imgSrc, 
 						display='flex'
 						flexDirection='row'
 					>
-						$ {price}
+						$ {room.price}
 					</Center>
 				</Box>
 				<Stack p='4' space={3}>
 					<Stack space={2}>
 						<Heading size='md' ml='-1'>
-							{name}
+							{room.name}
 						</Heading>
 						<Text
 							fontSize='xs'
@@ -74,10 +74,10 @@ export const RoomItem = ({ id, name, description, country, city, price, imgSrc, 
 							ml='-0.5'
 							mt='-1'
 						>
-							{country}, {city}
+							{room.country}, {room.city}
 						</Text>
 					</Stack>
-					<Text fontWeight='400'>{description}</Text>
+					<Text fontWeight='400'>{room.description}</Text>
 					<HStack alignItems='center' space={4} justifyContent='space-between'>
 						<HStack alignItems='center'>
 							<Text
@@ -87,7 +87,7 @@ export const RoomItem = ({ id, name, description, country, city, price, imgSrc, 
 								}}
 								fontWeight='400'
 							>
-								{price}
+								{room.price}
 							</Text>
 						</HStack>
 					</HStack>
