@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { ROOMS } from "../data/rooms";
+import { useSelector } from "react-redux";
+import { View, Text } from "react-native";
 
 const RoomDetail = ({ route, navigation}) => {
 
-  const room = rooms.filter((room) => room.Id === route.params.Id);
+  const room = useSelector((state) => state.rooms.rooms);
 
   useEffect(() => {
     navigation.setOptions({
@@ -13,7 +14,7 @@ const RoomDetail = ({ route, navigation}) => {
 
   return (
     <View>
-      <Text>{room.name}</Text>
+      <Text>Texto</Text>
     </View>
   )
 }

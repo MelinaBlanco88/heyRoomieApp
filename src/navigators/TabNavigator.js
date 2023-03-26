@@ -4,8 +4,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { styles } from "../../assets/css/styles.js";
-import Home from "../screens/Home";
-import RoomsList from "../screens/RoomsList";
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -14,7 +12,7 @@ const TabNavigator = () => {
 		<BottomTabs.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false, tabBarStyle: styles.tabBar }}>
 			<BottomTabs.Screen
 				name='Home'
-				component={Home}
+				component={Navigator}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<View style={styles.tabBarIcon}>
@@ -27,7 +25,7 @@ const TabNavigator = () => {
 
 			<BottomTabs.Screen
 				name='RoomsList'
-				component={RoomsList}
+				component={List}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<View style={styles.tabBarIcon}>

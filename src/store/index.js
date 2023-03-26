@@ -5,4 +5,4 @@ const RootReducer = combineReducers({
     rooms: RoomReducer,
 })
 
-export default createStore(RoomReducer)
+export default createStore(RootReducer)

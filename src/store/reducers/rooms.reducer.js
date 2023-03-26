@@ -9,9 +9,9 @@ const initialState = {
 const RoomReducer = (state=initialState, action) => {
     switch(action.type) {
         case SELECT_ROOM:
-            const indexRoom = state.rooms.find(room => room.id === state.action.roomId);  
+            const indexRoom = state.rooms.findIndex(room => room.id === action.roomId);  
 
-            if(indexRoom === 1) return state;
+            if(indexRoom === -1) return state;
             return { ...state, selected: state.rooms[indexRoom]}
         default: 
             return state;

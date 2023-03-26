@@ -6,30 +6,27 @@ import { RoomItem } from "../components/RoomItem";
 import { selectedRoom } from "../store/actions/room.action";
 
 const RoomsList = ({ navigation }) => {
-	const rooms = useSelector((state) => state.rooms);
+	const rooms = useSelector((state) => state.rooms.rooms);
 
 	const dispatch = useDispatch();
 
-	const onSelectRoom = (room) => {
-		dispatch(selectedRoom(room.id))
+	const onSelectRoom = (data) => {
+		dispatch(selectedRoom(data.id))
         navigation.navigate('RoomDetail', {
-            id: room.id,
-            name: room.name,
-        })
-    }
-
-    const renderRoomItem = ({ room }) => <RoomItem item={room} onSelected={onSelectRoom} />
+            name: data.name,
+        });
+    };
 
 	return (
 		<NativeBaseProvider>
 			<SafeAreaView>
 				<ScrollView>
-				<Box alignItems='center'>
+					<Box alignItems='center'>
 						{rooms.map((room) => {
 							return (
 								<RoomItem
-									keyExtractor={(room) => room.id}
-									renderItem={renderRoomItem}
+									data={room}
+									onSelected={onSelectRoom}
 									key={room.id}
 									{...room}
 								/>
