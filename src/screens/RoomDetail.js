@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { View, Text } from "react-native";
+import { ROOMS } from "../data/rooms"
 
 const RoomDetail = ({ route, navigation}) => {
 

@@ -4,6 +4,7 @@ import { Box, NativeBaseProvider, ScrollView } from "native-base";
 import { useSelector, useDispatch } from 'react-redux'
 import { RoomItem } from "../components/RoomItem";
 import { selectedRoom } from "../store/actions/room.action";
+import { ROOMS } from "../data/rooms"
 
 const RoomsList = ({ navigation }) => {
 	const rooms = useSelector((state) => state.rooms.rooms);
@@ -11,7 +12,7 @@ const RoomsList = ({ navigation }) => {
 	const dispatch = useDispatch();
 
 	const onSelectRoom = (data) => {
-		dispatch(selectedRoom(data.id))
+		dispatch(selectedRoom(data.id));
         navigation.navigate('RoomDetail', {
             name: data.name,
         });

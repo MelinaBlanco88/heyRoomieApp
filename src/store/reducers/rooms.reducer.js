@@ -6,10 +6,10 @@ const initialState = {
     selected: null,
 }
 
-const RoomReducer = (state=initialState, action) => {
+const RoomReducer = ( state = initialState, action) => {
     switch(action.type) {
         case SELECT_ROOM:
-            const indexRoom = state.rooms.findIndex(room => room.id === action.roomId);  
+            const indexRoom = state.rooms.findIndex(room => room.id === action.roomId);
 
             if(indexRoom === -1) return state;
             return { ...state, selected: state.rooms[indexRoom]}
