@@ -4,7 +4,7 @@ import { View, Text } from "react-native";
 import { ROOMS } from "../data/rooms"
 
 const RoomDetail = ({ route, navigation}) => {
-
+  const { name } = route.params;
   const room = useSelector((state) => state.rooms.rooms);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const RoomDetail = ({ route, navigation}) => {
 
   return (
     <View>
-      <Text>Texto</Text>
+      <Text>{ name }</Text>
     </View>
   )
 }

@@ -6,14 +6,13 @@ import RoomDetail from '../screens/RoomDetail';
 
 const Stack = createNativeStackNavigator();
 
-const Navigator = () => {
+const RoomNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={ Home } options={{ title: 'Rooms' }} />
       <Stack.Screen name="RoomsList" component={ RoomsList } />
       <Stack.Screen name="RoomDetail" component={ RoomDetail } />
     </Stack.Navigator>
   )
 }
 
-export default Navigator
+export default RoomNavigator

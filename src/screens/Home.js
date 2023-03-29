@@ -18,7 +18,7 @@ const Home = ( { navigation } ) => {
 
             <View style={styles.screen}>
                 <TouchableOpacity activeOpacity={0.75} onPress={() => { 
-                    navigation.navigate('RoomsList') 
+                    navigation.navigate('RoomNavigator') 
                 }} style={styles.button}>
                     <Text style={styles.colorWhite}>Login</Text>
                 </TouchableOpacity>

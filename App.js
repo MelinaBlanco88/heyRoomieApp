@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native'
+import { NativeBaseProvider } from "native-base";
+import { NavigationContainer } from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 import TabNavigator from './src/navigators/TabNavigator';
@@ -25,11 +26,13 @@ export default function App() {
   }
 
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <TabNavigator />
-      </NavigationContainer>
-    </Provider>
+    <NativeBaseProvider>
+      <Provider store={store}>
+        <NavigationContainer>
+          <TabNavigator />
+        </NavigationContainer>
+      </Provider>
+    </NativeBaseProvider>
   );
 };
 

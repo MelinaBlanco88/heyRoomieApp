@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView } from 'react-native';
-import { Box, NativeBaseProvider, ScrollView } from "native-base";
+import { Box, ScrollView } from "native-base";
 import { useSelector, useDispatch } from 'react-redux'
 import { RoomItem } from "../components/RoomItem";
 import { selectedRoom } from "../store/actions/room.action";
@@ -11,32 +11,29 @@ const RoomsList = ({ navigation }) => {
 
 	const dispatch = useDispatch();
 
-	const onSelectRoom = (data) => {
-		dispatch(selectedRoom(data.id));
+	const onSelectRoom = (roomid, name) => {
+		dispatch(selectedRoom(roomid));
         navigation.navigate('RoomDetail', {
-            name: data.name,
+            name: name,
         });
     };
 
 	return (
-		<NativeBaseProvider>
-			<SafeAreaView>
-				<ScrollView>
-					<Box alignItems='center'>
-						{rooms.map((room) => {
-							return (
-								<RoomItem
-									data={room}
-									onSelected={onSelectRoom}
-									key={room.id}
-									{...room}
-								/>
-							);
-						})}
-					</Box>
-				</ScrollView>
-			</SafeAreaView>
-		</NativeBaseProvider>
+		<SafeAreaView>
+			<ScrollView>
+				<Box alignItems='center'>
+					{rooms.map((room) => {
+						return (
+							<RoomItem
+								onSelected={onSelectRoom}
+								key={room.id}
+								{...room}
+							/>
+						);
+					})}
+				</Box>
+			</ScrollView>
+		</SafeAreaView>
 	);
 };
 

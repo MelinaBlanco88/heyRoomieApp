@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { styles } from "../../assets/css/styles.js";
-import { Navigator } from "./Navigator.js";
+import RoomNavigator from "./Navigator.js";
 import RoomsList from "../screens/RoomsList.js";
 import Home from "../screens/Home.js";
 
@@ -27,8 +27,8 @@ const TabNavigator = () => {
 			/>
 
 			<BottomTabs.Screen
-				name='RoomsList'
-				component={RoomsList}
+				name='RoomNavigator'
+				component={RoomNavigator}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<View style={styles.tabBarIcon}>

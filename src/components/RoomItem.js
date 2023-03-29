@@ -3,11 +3,13 @@ import { AspectRatio, Stack, Image, Center, Heading, HStack, Box, Text } from "n
 import { styles } from "../../assets/css/styles.js";
 import { TouchableOpacity } from "react-native";
 
-export const RoomItem = ({ id, name, description, country, city, price, imgSrc, room, onSelected }) => {
+export const RoomItem = ({ id, name, description, country, city, price, imgSrc, onSelected }) => {
 	return (
 		<TouchableOpacity
 		// No funciona:
-		onPress={() => onSelected(room)}
+		onPress={() => {
+			onSelected(id, name)}
+			}
 		>
 			<Box
 				style={styles.boxRooms}
