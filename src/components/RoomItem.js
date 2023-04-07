@@ -7,10 +7,7 @@ export const RoomItem = ({ id, name, description, country, city, price, imgSrc, 
 	return (
 		<TouchableOpacity
 		// No funciona:
-		onPress={() => {
-			onSelected(id, name)}
-			}
-		>
+		onPress={() => onSelected(id, name, price)}>
 			<Box
 				style={styles.boxRooms}
 				maxW='80'

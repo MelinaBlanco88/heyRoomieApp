@@ -5,8 +5,8 @@ import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { styles } from "../../assets/css/styles.js";
 import RoomNavigator from "./Navigator.js";
-import RoomsList from "../screens/RoomsList.js";
 import Home from "../screens/Home.js";
+import RoomUpload from '../screens/RoomUpload';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -33,7 +33,20 @@ const TabNavigator = () => {
 					tabBarIcon: ({ focused }) => (
 						<View style={styles.tabBarIcon}>
 							<FontAwesome5 name='bed' size={24} color={focused ? "#7F5DF0" : "#748C94"} />
-							<Text style={{ color: focused ? "#7F5DF0" : "#748C94" }}>RoomsList</Text>
+							<Text style={{ color: focused ? "#7F5DF0" : "#748C94", textAlign: "center" }}>Lista de habitaciones</Text>
+						</View>
+					),
+				}}
+			/>
+
+			<BottomTabs.Screen
+				name='RoomUpload'
+				component={RoomUpload}
+				options={{
+					tabBarIcon: ({ focused }) => (
+						<View style={styles.tabBarIcon}>
+							<FontAwesome5 name='bed' size={24} color={focused ? "#7F5DF0" : "#748C94"} />
+							<Text style={{ color: focused ? "#7F5DF0" : "#748C94", textAlign: "center" }}>¡Sube tu habitación!</Text>
 						</View>
 					),
 				}}

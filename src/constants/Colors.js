@@ -4,5 +4,5 @@ export default {
     secondary: '#FE8906',
     black: '#000000',
     white: '#ffffff',
-    alert: '#e41628'
+    alert: '#e41628',
 };

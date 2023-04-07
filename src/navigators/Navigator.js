@@ -1,8 +1,8 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import RoomsList from '../screens/RoomsList'
-import Home from '../screens/Home';
 import RoomDetail from '../screens/RoomDetail';
+import RoomUpload from '../screens/RoomUpload';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,6 +11,7 @@ const RoomNavigator = () => {
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="RoomsList" component={ RoomsList } />
       <Stack.Screen name="RoomDetail" component={ RoomDetail } />
+      <Stack.Screen name="RoomUpload" component={ RoomUpload } />
     </Stack.Navigator>
   )
 }

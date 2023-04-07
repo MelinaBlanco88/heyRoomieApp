@@ -50,10 +50,6 @@ export const styles = StyleSheet.create({
 		paddingBottom: 10,
 	},
 
-	container: {
-		marginTop: 20,
-	},
-
 	tabBar: {
 		position: 'fixed',
 		bottom: 0,
@@ -73,4 +69,21 @@ export const styles = StyleSheet.create({
 		marginTop: 20,
 		marginBottom: 20,
 	},
+
+	container: {
+		marginTop: 20,
+        flex: 1,
+        margin: 30,
+    },
+    label: {
+        fontSize: 18,
+        marginBottom: 16
+    },
+    input: {
+        borderBottomColor: '#ccc',
+        borderBottomWidth: 1,
+        marginBottom: 16,
+        paddingHorizontal: 2,
+        paddingVertical: 4
+    }
 });
