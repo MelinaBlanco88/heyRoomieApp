@@ -1,10 +1,18 @@
 import React from 'react'
 import { FlatList} from 'react-native'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import PlaceItem from '../components/PlaceItem'
+import { loadPlaces } from '../store/places.actions'
 
 const PlaceListScreen = ({navigation}) => {
+    const dispatch = useDispatch();
+
+    React.useEffect(()=>{
+     dispatch(loadPlaces())
+    },[])
+
     const places = useSelector(state=>state.places.places)
+
     console.log(places)
     const renderPlaceItem = (data) => (
         <PlaceItem  
@@ -16,13 +24,11 @@ const PlaceListScreen = ({navigation}) => {
     )
 
     return (
-        
         <FlatList style={{flex:1}}
             data={places}
             renderItem={renderPlaceItem}
             keyExtractor ={item => item.id}
         />
-        
     )
 }
 

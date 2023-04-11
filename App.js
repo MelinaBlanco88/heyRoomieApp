@@ -7,7 +7,18 @@ import TabNavigator from './src/navigators/TabNavigator';
 import store from './src/store/index';
 import { Provider } from 'react-redux';
 
+import { init } from './src/db'
+
 SplashScreen.preventAutoHideAsync();
+
+init().then(
+  () => {
+    console.log("Iniciar db");
+  }
+).catch(err => {
+  console.log("Iniciar db failed");
+  console.log(err);
+});
 
 export default function App() {
   const [fontsLoaded] = useFonts({

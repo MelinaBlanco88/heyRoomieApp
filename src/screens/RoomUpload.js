@@ -6,7 +6,7 @@ import { RoomItem } from "../components/RoomItem";
 import { selectedRoom } from "../store/actions/room.action";
 import { ROOMS } from "../data/rooms";
 import { styles } from "../../assets/css/styles.js";
-import { addPlace } from '../store/actions/places.actions';
+import { addPlace } from "../store/actions/places.actions";
 import ImageSelector from '../components/ImageSelector'
 
 const RoomUpload = ({ navigation }) => {
@@ -32,9 +32,8 @@ const RoomUpload = ({ navigation }) => {
 					<Text>Título:</Text>
 					<TextInput style={styles.input} onChangeText={titleChangeHandler}/>
 					<ImageSelector onImage={image=>setImageValue(image)} />
-					<Button color="#a53860" onPress={savePlaceHandler}>Guardar</Button>
+					<Button onPress={savePlaceHandler}>Guardar</Button>
 				</View>
-			
 			</ScrollView>
 		</SafeAreaView>
     )

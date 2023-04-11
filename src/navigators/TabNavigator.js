@@ -45,7 +45,7 @@ const TabNavigator = () => {
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<View style={styles.tabBarIcon}>
-							<FontAwesome5 name='bed' size={24} color={focused ? "#7F5DF0" : "#748C94"} />
+							<FontAwesome5 name='door-open' size={24} color={focused ? "#7F5DF0" : "#748C94"} />
 							<Text style={{ color: focused ? "#7F5DF0" : "#748C94", textAlign: "center" }}>¡Sube tu habitación!</Text>
 						</View>
 					),
