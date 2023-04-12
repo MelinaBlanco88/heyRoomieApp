@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native'
 import React, { useState } from 'react'
-import ImagePicker from 'expo-image-picker'
+import * as ImagePicker from 'expo-image-picker'
 
 const ImageSelector = ({onImage}) => {
     const [pickedUri, setPickedUri] = useState()
@@ -12,20 +12,21 @@ const ImageSelector = ({onImage}) => {
             return false
         }
         return true
-     }
+    }
 
     const handlerTakeImage = async () => {
         const isCameraOk = await VerifyPermissions()
         if (!isCameraOk) return
         
-        const image = await ImagePicker.launchCameraAsync({
+        const image = await ImagePicker.launchImageLibraryAsync({
             allowsEditing: true, 
             aspect: [16,9],
             quality: 0.8,
         })
+        console.log(image);
         setPickedUri(image.assets[0].uri)
         onImage(image.assets[0].uri)
-     }
+    }
 
     return (
         <View style={styles.container}>

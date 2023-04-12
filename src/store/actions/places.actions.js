@@ -1,4 +1,4 @@
-import FileSystem from 'expo-file-system'
+import * as FileSystem from 'expo-file-system'
 import { insertAddress, fetchAddress } from '../../db'
 
 
